@@ -8,6 +8,12 @@ function Cv(){
     const [location, setLocation] = useState("");
     const [qualification, setQualification] = useState("");
     const [graduation, setGraduation] = useState("");
+    const [job, setJob] = useState("");
+    const [employer, setEmployer] = useState("");
+    const [startDate, setStartDate] = useState("");
+    const [endDate, setEndDate] = useState("");
+    const [city, setCity] = useState("");
+    const [country, setCountry] = useState("");
 
     const addName = (e) => {
         setName(e.target.value)
@@ -41,6 +47,30 @@ function Cv(){
         setGraduation(e.target.value)
     }
 
+    const addJob = (e) => {
+        setJob(e.target.value)
+    }
+
+    const addEmployer = (e) => {
+        setEmployer(e.target.value)
+    }
+
+    const addStartDate = (e) => {
+        setStartDate(e.target.value)
+    }
+
+    const addEndDate = (e) => {
+        setEndDate(e.target.value)
+    }
+
+    const addCity = (e) => {
+        setCity(e.target.value)
+    }
+
+    const addCountry = (e) => {
+        setCountry(e.target.value)
+    }
+
     return(
         <>
         <div className="general-information">
@@ -62,6 +92,22 @@ function Cv(){
             <p>Qualification: {qualification}</p>
             <input type="text" value={graduation} onChange={addGraduationYear} placeholder='2010'/>
             <p>Graduation Year: {graduation}</p>
+        </div>
+
+        <div className="practical-experience">
+            <input type="text" value={job} onChange={addJob}/>
+            <p>Job Title: {job}</p>
+            <input type="text"  value={employer} onChange={addEmployer}/>
+            <p>Employer: {employer}</p>
+            <input type="text" value={startDate} onChange={addStartDate}/>
+            <p>Start Date: {startDate}</p>
+            <input type="text" value={endDate} onChange={addEndDate} />
+            <p>End Date: {endDate}</p>
+            <input type="text" value={city} onChange={addCity} />
+            <p>City: {city}</p>
+            <input type="text" value={country} onChange={addCountry}/>
+            <p>Country: {country}</p>
+
         </div>
         </>
     )
