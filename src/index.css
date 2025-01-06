@@ -1,0 +1,82 @@
+.input{
+    background-color: blueviolet;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.general-information{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    background-color: blue;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.general-information input{
+    font-size: 2rem;
+    border-radius: 6px;
+}
+
+.general-information p{
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+.educational-experience{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    background-color: blue;
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 20px;
+}
+
+.educational-experience input{
+    font-size: 2rem;
+    border-radius: 6px;
+}
+
+.educational-experience p{
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+.practical-experience{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    background-color: blue;
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 20px;
+}
+
+.practical-experience input{
+    font-size: 2rem;
+    border-radius: 6px;
+}
+
+.practical-experience p{
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+.skills{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: blue;
+    padding-bottom: 7px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.skills button{
+    width: 80%;
+    height: 3em;
+    border-radius: 6px;
+    font-size: 18px;
+    margin-left: 50px;
+
+}
+
+

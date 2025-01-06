@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 function Cv(){
-    const [name, setName] = useState("");
+    const [fname, setFname] = useState("");
+    const [lname, setLname] = useState("");
     const [email, setEmail] = useState("");
     const [number, setNumber] = useState("");
     const [school, setSchool] = useState("");
@@ -15,8 +16,12 @@ function Cv(){
     const [city, setCity] = useState("");
     const [country, setCountry] = useState("");
 
-    const addName = (e) => {
-        setName(e.target.value)
+    const addFname = (e) => {
+        setFname(e.target.value)
+    }
+
+     const addLname = (e) => {
+        setLname(e.target.value)
     }
 
     const addEmail = (e) => {
@@ -73,42 +78,58 @@ function Cv(){
 
     return(
         <>
-        <div className="general-information">
-            <input type='text' value={name} onChange={addName}/>
-            <p>Name: {name}</p>
-            <input type="email" value={email} onChange={addEmail}/>
+        <div className="input">
+            <div className="general-information">
+            <h1>General Information</h1>
+            <p>First Name: {fname}</p>
+            <input type='text' value={fname} onChange={addFname}/>
+            <p>Last Name: {lname}</p>
+            <input type='text' value={lname} onChange={addLname}/>
             <p>Email: {email}</p>
-            <input value={number} onChange={addPhoneNumber}/>
+            <input type="email" value={email} onChange={addEmail}/>
             <p>Phone Number: {number}</p>
+            <input value={number} onChange={addPhoneNumber}/>
         </div>
+
         <div className="educational-experience">
-            <input type="text" value={school} onChange={addSchoolName}/>
+            <h1>Education</h1>
             <p>School Name: {school}</p>
-            <input type="text" value={study} onChange={addFieldOfStudy}/>
+            <input type="text" value={school} onChange={addSchoolName}/>
             <p>Field of study: {study}</p>
-            <input type="text" value={location} onChange={addSchoolLocation}/>
+            <input type="text" value={study} onChange={addFieldOfStudy}/>
             <p>School Location: {location}</p>
-            <input type="text" value={qualification} onChange={addQualification} placeholder='e.g. Diploma, Degree, A levels' />
+            <input type="text" value={location} onChange={addSchoolLocation}/>
             <p>Qualification: {qualification}</p>
-            <input type="text" value={graduation} onChange={addGraduationYear} placeholder='2010'/>
+            <input type="text" value={qualification} onChange={addQualification} placeholder='e.g. Diploma, Degree, A levels' />
             <p>Graduation Year: {graduation}</p>
+            <input type="text" value={graduation} onChange={addGraduationYear} placeholder='2010'/>
         </div>
 
         <div className="practical-experience">
-            <input type="text" value={job} onChange={addJob}/>
+            <h1>Experience</h1>
             <p>Job Title: {job}</p>
-            <input type="text"  value={employer} onChange={addEmployer}/>
+            <input type="text" value={job} onChange={addJob}/>
             <p>Employer: {employer}</p>
-            <input type="text" value={startDate} onChange={addStartDate}/>
+            <input type="text"  value={employer} onChange={addEmployer}/>
             <p>Start Date: {startDate}</p>
-            <input type="text" value={endDate} onChange={addEndDate} />
+            <input type="text" value={startDate} onChange={addStartDate}/>
             <p>End Date: {endDate}</p>
-            <input type="text" value={city} onChange={addCity} />
+            <input type="text" value={endDate} onChange={addEndDate} />
             <p>City: {city}</p>
-            <input type="text" value={country} onChange={addCountry}/>
+            <input type="text" value={city} onChange={addCity} />
             <p>Country: {country}</p>
-
+            <input type="text" value={country} onChange={addCountry}/>
         </div>
+
+        <div className="skills">
+            <h1>⭐Skills</h1>
+            <button>+ Add Skill</button>
+        </div>
+        </div>
+
+        <div className="cv">
+        </div>
+        
         </>
     )
 
