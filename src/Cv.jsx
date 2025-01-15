@@ -151,9 +151,28 @@ function Cv(){
         </div>
 
          <div className="cv-template">
-            <h1>Name: {name.fName} {name.lName}</h1>
+            <h1>{name.fName} {name.lName}</h1>
             <p>✉{name.email}</p>
             <p>📞{name.number}</p>
+
+            <h2>Education</h2>
+            <p>{school.name}</p>
+            <p>{school.study}</p>
+            <p>{school.location}</p>
+            <p>{school.qualification}</p>
+            <p>{school.graduation}</p>
+
+            <h2>Experience</h2>
+            <p>{job.job}</p>
+            <p>{job.employer}</p>
+            <p>{job.startDate}</p>
+            <p>{job.endDate}</p>
+            <p>{job.city}</p>
+            <p>{job.country}</p>
+
+            <h2>Skills</h2>
+            <p>{skills}</p>
+            
         </div>
         </div>
         
