@@ -1,8 +1,8 @@
 .input{
-    background-color: blueviolet;
+    /*background-color: blueviolet;
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px;*/
     border-radius: 8px;
 }
 
@@ -96,6 +96,18 @@ body.blur-background{
     height: 25px;
     border-radius: 5px;
     margin-bottom: 5px;
+}
+
+.cv-container{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.cv-template{
+    background-color: brown;
+    width: 400px;
+    color: black;
 }
 
 

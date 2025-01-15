@@ -83,7 +83,8 @@ function Cv(){
 
     return(
         <>
-        <div className="input">
+        <div className="cv-container">
+            <div className="input">
             <div className="general-information">
             <h1>General Information</h1>
             <p>First Name: {name.fName}</p>
@@ -148,6 +149,17 @@ function Cv(){
             <button onClick={toggleSkillInput}>+ Add Skill</button>
         </div>
         </div>
+
+         <div className="cv-template">
+            <h1>Name: {name.fName} {name.lName}</h1>
+            <p>✉{name.email}</p>
+            <p>📞{name.number}</p>
+        </div>
+        </div>
+        
+
+
+       
         
 
        
