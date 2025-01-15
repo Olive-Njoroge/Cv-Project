@@ -78,7 +78,7 @@ function Cv(){
     }
 
     const toggleSkillInput = () => {
-        setIsSkillInputVisible(!isSkillInputVisible);//toggle input visibility
+        setIsSkillInputVisible(true);//toggle input visibility
     }
 
     return(
@@ -133,13 +133,15 @@ function Cv(){
                 <ul>
                 {skills.map((skill, index) => 
                 <li key={index} onClick={() => removeSkill(index)}>{skill}</li>)}
-            </ul>
-
+                </ul>
+            <div className='skillAddDiv'>
             {isSkillInputVisisble && (
                 <div className='add-skill-input'><input type="text" id='newSkill' />
             <button onClick={addSkill}>+</button>
             </div>
             )}
+
+            </div>
             
             
 
