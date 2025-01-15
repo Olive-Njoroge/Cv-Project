@@ -5,6 +5,15 @@ function Cv(){
     const [job, setJob] = useState({job: "", employer: "", startDate: "", endDate: "", city: "", country: ""});
     const [skills, setSkills] = useState(["writing", "dxx"]);
     const [isSkillInputVisisble, setIsSkillInputVisible] = useState(false);//toggles visibility
+    const [photo, setPhoto] = useState(null);
+
+    const handlePhotoChange = (e) => {
+        const file = e.target.files[0];  // Get the selected file
+        if (file) {
+            // Create an object URL and update the state with the photo URL
+            setPhoto(URL.createObjectURL(file)); 
+        }
+    };
 
     const addFname = (e) => {
         setName(n => ({...n, fName: e.target.value}))
@@ -85,8 +94,22 @@ function Cv(){
         <>
         <div className="cv-container">
             <div className="input">
+
+                 <div className="photo-upload">
+                    <h2>Upload a Photo</h2>
+                    <input type="file" accept="image/*" onChange={handlePhotoChange} />
+                    {photo && (
+                        <div className="photo-preview">
+                            {/* Display the uploaded photo */}
+                            <img src={photo} alt="Preview" width="150" height="150" />
+                        </div>
+                    )}
+                </div>
+
+
             <div className="general-information">
             <h1>General Information</h1>
+            
             <p>First Name: {name.fName}</p>
             <input type='text' value={name.fName} onChange={addFname}/>
             <p>Last Name: {name.lName}</p>
@@ -151,6 +174,7 @@ function Cv(){
         </div>
 
          <div className="cv-template">
+             {photo && <img src={photo} alt="Uploaded Photo" width="150" height="150"/>}
             <h1>{name.fName} {name.lName}</h1>
             <p>✉{name.email}</p>
             <p>📞{name.number}</p>
