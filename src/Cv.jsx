@@ -6,6 +6,7 @@ function Cv(){
     const [skills, setSkills] = useState(["writing", "dxx"]);
     const [isSkillInputVisisble, setIsSkillInputVisible] = useState(false);//toggles visibility
     const [photo, setPhoto] = useState(null);
+    const [about, setAbout] = useState("");
 
     const handlePhotoChange = (e) => {
         const file = e.target.files[0];  // Get the selected file
@@ -90,6 +91,10 @@ function Cv(){
         setIsSkillInputVisible(true);//toggle input visibility
     }
 
+    const enterAbout = (e) => {
+        setAbout(e.target.value);
+    }
+
     return(
         <>
         <div className="cv-container">
@@ -118,7 +123,15 @@ function Cv(){
             <input type="email" value={name.email} onChange={addEmail}/>
             <p>Phone Number: {name.number}</p>
             <input value={name.number} onChange={addPhoneNumber}/>
+
+            <div className="about-self">
+            <p>About you: {about}</p>
+            <textarea onChange={enterAbout} placeholder='Tell us about you'></textarea>
+
         </div>
+        </div>
+
+        
 
         <div className="educational-experience">
             <h1>Education</h1>
@@ -174,10 +187,23 @@ function Cv(){
         </div>
 
          <div className="cv-template">
-             {photo && <img src={photo} alt="Uploaded Photo" width="150" height="150"/>}
-            <h1>{name.fName} {name.lName}</h1>
+            <div className="general">
+                <div className="photo">
+                    {photo && <img src={photo} alt="Uploaded Photo" width="150" height="150"/>}
+                </div>
+            <div className="details">
+                <h1>{name.fName} {name.lName}</h1>
             <p>✉{name.email}</p>
             <p>📞{name.number}</p>
+            </div>
+            </div>
+
+            <hr/>
+
+            <h2>About</h2>
+            <p>{about}</p>
+            <hr/>
+             
 
             <h2>Education</h2>
             <p>{school.name}</p>
@@ -185,6 +211,7 @@ function Cv(){
             <p>{school.location}</p>
             <p>{school.qualification}</p>
             <p>{school.graduation}</p>
+            <hr/>
 
             <h2>Experience</h2>
             <p>{job.job}</p>
@@ -193,9 +220,12 @@ function Cv(){
             <p>{job.endDate}</p>
             <p>{job.city}</p>
             <p>{job.country}</p>
+            <hr/>
 
             <h2>Skills</h2>
-            <p>{skills}</p>
+            <ul>
+                <li>{skills}</li>
+            </ul>
             
         </div>
         </div>

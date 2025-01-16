@@ -1,6 +1,6 @@
 .input{
-    /*background-color: blueviolet;
-    max-width: 600px;
+    background-color: blueviolet;
+    /*max-width: 600px;
     margin: 0 auto;
     padding: 20px;*/
     border-radius: 8px;
@@ -9,7 +9,7 @@
 .general-information{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
-    background-color: blue;
+    /*background-color: blue;*/
     border-radius: 8px;
     padding: 8px;
 }
@@ -24,10 +24,20 @@
     margin-bottom: 0;
 }
 
+.about-self input{
+    font-size: 2rem;
+    border-radius: 6px;
+}
+
+.about-self p{
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
 .educational-experience{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
-    background-color: blue;
+    /*background-color: blue;*/
     border-radius: 8px;
     padding: 8px;
     margin-top: 20px;
@@ -46,7 +56,7 @@
 .practical-experience{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
-    background-color: blue;
+    /*background-color: blue;*/
     border-radius: 8px;
     padding: 8px;
     margin-top: 20px;
@@ -64,7 +74,7 @@
 
 .skills{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: blue;
+    /*background-color: blue;*/
     padding-bottom: 7px;
     border-radius: 8px;
     margin-top: 20px;
@@ -106,12 +116,22 @@ body.blur-background{
 
 .cv-template{
     background-color: brown;
-    width: 400px;
+    border-radius: 10px;
+    width: 800px;
     color: black;
 }
 
 img{
     border-radius: 50%;
+}
+
+.general{
+    display: flex;
+    justify-content: left;
+}
+
+.details{
+    margin-left: 30px;
 }
 
 
