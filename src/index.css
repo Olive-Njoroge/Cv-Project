@@ -1,7 +1,7 @@
 .input{
-    background-color: blueviolet;
-    /*max-width: 600px;
-    margin: 0 auto;
+    background-color:#D0D5F8;
+    max-width: 300px;
+    /*margin: 0 auto;
     padding: 20px;*/
     border-radius: 8px;
 }
@@ -14,9 +14,12 @@
     padding: 8px;
 }
 
-.general-information input{
-    font-size: 2rem;
+.general-information input, .about-self input, .educational-experience input, .practical-experience input{
+    font-size: 1rem;
+    width: 98%;
+    height: 32px;
     border-radius: 6px;
+    margin-bottom: 4px;
 }
 
 .general-information p{
@@ -43,10 +46,6 @@
     margin-top: 20px;
 }
 
-.educational-experience input{
-    font-size: 2rem;
-    border-radius: 6px;
-}
 
 .educational-experience p{
     font-size: 1.2rem;
@@ -62,10 +61,7 @@
     margin-top: 20px;
 }
 
-.practical-experience input{
-    font-size: 2rem;
-    border-radius: 6px;
-}
+
 
 .practical-experience p{
     font-size: 1.2rem;

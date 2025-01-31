@@ -115,14 +115,14 @@ function Cv(){
             <div className="general-information">
             <h1>General Information</h1>
             
-            <p>First Name: {name.fName}</p>
-            <input type='text' value={name.fName} onChange={addFname}/>
-            <p>Last Name: {name.lName}</p>
-            <input type='text' value={name.lName} onChange={addLname}/>
-            <p>Email: {name.email}</p>
-            <input type="email" value={name.email} onChange={addEmail}/>
-            <p>Phone Number: {name.number}</p>
-            <input value={name.number} onChange={addPhoneNumber}/>
+            {/*<p>First Name: {name.fName}</p>*/}
+            <input type='text' value={name.fName} onChange={addFname} placeholder='First Name...' required/>
+            {/*<p>Last Name: {name.lName}</p>*/}
+            <input type='text' value={name.lName} onChange={addLname} placeholder='Last Name...' required/>
+            {/*<p>Email: {name.email}</p>*/}
+            <input type="email" value={name.email} onChange={addEmail} placeholder='Email...' required/>
+            {/*<p>Phone Number: {name.number}</p>*/}
+            <input value={name.number} onChange={addPhoneNumber} placeholder='Phone Number...' required/>
 
             <div className="about-self">
             <p>About you: {about}</p>
@@ -135,32 +135,32 @@ function Cv(){
 
         <div className="educational-experience">
             <h1>Education</h1>
-            <p>School Name: {school.name}</p>
-            <input type="text" value={school.name} onChange={addSchoolName}/>
-            <p>Field of study: {school.study}</p>
-            <input type="text" value={school.study} onChange={addFieldOfStudy}/>
-            <p>School Location: {school.location}</p>
-            <input type="text" value={school.location} onChange={addSchoolLocation}/>
-            <p>Qualification: {school.qualification}</p>
-            <input type="text" value={school.qualification} onChange={addQualification} placeholder='e.g. Diploma, Degree, A levels' />
-            <p>Graduation Year: {school.graduation}</p>
-            <input type="text" value={school.graduation} onChange={addGraduationYear} placeholder='2010'/>
+            {/*<p>School Name: {school.name}</p>*/}
+            <input type="text" value={school.name} onChange={addSchoolName} placeholder='School Name'/>
+            {/*<p>Field of study: {school.study}</p>*/}
+            <input type="text" value={school.study} onChange={addFieldOfStudy} placeholder='Field of study...e.g Engineering'/>
+            {/*<p>School Location: {school.location}</p>*/}
+            <input type="text" value={school.location} onChange={addSchoolLocation} placeholder='School Location'/>
+            {/*<p>Qualification: {school.qualification}</p>*/}
+            <input type="text" value={school.qualification} onChange={addQualification} placeholder='Qualification...e.g. Diploma' />
+            {/*<p>Graduation Year: {school.graduation}</p>*/}
+            <input type="text" value={school.graduation} onChange={addGraduationYear} placeholder='Graduation Year'/>
         </div>
 
         <div className="practical-experience">
             <h1>Experience</h1>
-            <p>Job Title: {job.job}</p>
-            <input type="text" value={job.job} onChange={addJob}/>
-            <p>Employer: {job.employer}</p>
-            <input type="text"  value={job.employer} onChange={addEmployer}/>
-            <p>Start Date: {job.startDate}</p>
-            <input type="text" value={job.startDate} onChange={addStartDate}/>
-            <p>End Date: {job.endDate}</p>
-            <input type="text" value={job.endDate} onChange={addEndDate} />
-            <p>City: {job.city}</p>
-            <input type="text" value={job.city} onChange={addCity} />
-            <p>Country: {job.country}</p>
-            <input type="text" value={job.country} onChange={addCountry}/>
+            {/*<p>Job Title: {job.job}</p>*/}
+            <input type="text" value={job.job} onChange={addJob} placeholder='Job Title'/>
+            {/*<p>Employer: {job.employer}</p>*/}
+            <input type="text"  value={job.employer} onChange={addEmployer} placeholder='Employer'/>
+            {/*<p>Start Date: {job.startDate}</p>*/}
+            <input type="text" value={job.startDate} onChange={addStartDate} placeholder='Start Date'/>
+            {/*<p>End Date: {job.endDate}</p>*/}
+            <input type="text" value={job.endDate} onChange={addEndDate} placeholder='End Date' />
+            {/*<p>City: {job.city}</p>*/}
+            <input type="text" value={job.city} onChange={addCity} placeholder='City' />
+            {/*<p>Country: {job.country}</p>*/}
+            <input type="text" value={job.country} onChange={addCountry} placeholder='Country'/>
         </div>
 
         <div className="skills">
