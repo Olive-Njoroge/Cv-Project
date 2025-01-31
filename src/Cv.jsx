@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import arrowDown from './assets/Arrow Down Double Icon _ Stroke _ Standard _  Download on Hugeicons Pro.jpeg'
 function Cv(){
     const [name, setName] = useState({fName:"", lName: "", email: "", number: ""});
     const [school, setSchool] = useState({name: "", study: "", loaction: "", qualification: "", graduation: ""});
@@ -113,7 +114,7 @@ function Cv(){
 
 
             <div className="general-information">
-            <h1>General Information</h1>
+            <h1>General Information {<img src={arrowDown}></img>}</h1>
             
             {/*<p>First Name: {name.fName}</p>*/}
             <input type='text' value={name.fName} onChange={addFname} placeholder='First Name...' required/>
@@ -134,7 +135,7 @@ function Cv(){
         
 
         <div className="educational-experience">
-            <h1>Education</h1>
+            <h1>Education {<img src={arrowDown}></img>}</h1>
             {/*<p>School Name: {school.name}</p>*/}
             <input type="text" value={school.name} onChange={addSchoolName} placeholder='School Name'/>
             {/*<p>Field of study: {school.study}</p>*/}
@@ -148,7 +149,7 @@ function Cv(){
         </div>
 
         <div className="practical-experience">
-            <h1>Experience</h1>
+            <h1>Experience {<img src={arrowDown}></img>}</h1>
             {/*<p>Job Title: {job.job}</p>*/}
             <input type="text" value={job.job} onChange={addJob} placeholder='Job Title'/>
             {/*<p>Employer: {job.employer}</p>*/}
@@ -164,7 +165,7 @@ function Cv(){
         </div>
 
         <div className="skills">
-            <h1>⭐Skills</h1>
+            <h1>⭐Skills {<img src={arrowDown}></img>}</h1>
             
             
                 <ul>
