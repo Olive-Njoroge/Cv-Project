@@ -146,6 +146,8 @@ function Cv(){
             <input type="text" value={school.qualification} onChange={addQualification} placeholder='Qualification...e.g. Diploma' />
             {/*<p>Graduation Year: {school.graduation}</p>*/}
             <input type="text" value={school.graduation} onChange={addGraduationYear} placeholder='Graduation Year'/>
+            <button>Add</button>
+            <button>Submit</button>
         </div>
 
         <div className="practical-experience">
@@ -162,6 +164,8 @@ function Cv(){
             <input type="text" value={job.city} onChange={addCity} placeholder='City' />
             {/*<p>Country: {job.country}</p>*/}
             <input type="text" value={job.country} onChange={addCountry} placeholder='Country'/>
+            <button>Add</button>
+            <button>Submit</button>
         </div>
 
         <div className="skills">
@@ -178,6 +182,9 @@ function Cv(){
             <button onClick={addSkill}>+</button>
             </div>
             )}
+
+            <button>Add</button>
+            <button>Submit</button>
 
             </div>
             
