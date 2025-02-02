@@ -8,6 +8,10 @@ function Cv(){
     const [isSkillInputVisisble, setIsSkillInputVisible] = useState(false);//toggles visibility
     const [photo, setPhoto] = useState(null);
     const [about, setAbout] = useState("");
+    const [showInputs, setShowInputs] = useState(false);
+    const [showOutputs, setShowOutputs] = useState(false);
+    const [displayInputs, setDisplayInputs] = useState(false);
+    const [skillOutputs, setSkillOutputs] = useState(false);
 
     const handlePhotoChange = (e) => {
         const file = e.target.files[0];  // Get the selected file
@@ -96,6 +100,7 @@ function Cv(){
         setAbout(e.target.value);
     }
 
+
     return(
         <>
         <div className="cv-container">
@@ -114,63 +119,79 @@ function Cv(){
 
 
             <div className="general-information">
-            <h1>General Information {<img src={arrowDown}></img>}</h1>
+            <h1 onClick={() => setDisplayInputs(!displayInputs)} style={{ cursor: "pointer" }}>
+                General Information {<img src={arrowDown}></img>}</h1>
+            {displayInputs && (
+        <>
             
-            {/*<p>First Name: {name.fName}</p>*/}
             <input type='text' value={name.fName} onChange={addFname} placeholder='First Name...' required/>
-            {/*<p>Last Name: {name.lName}</p>*/}
             <input type='text' value={name.lName} onChange={addLname} placeholder='Last Name...' required/>
-            {/*<p>Email: {name.email}</p>*/}
             <input type="email" value={name.email} onChange={addEmail} placeholder='Email...' required/>
-            {/*<p>Phone Number: {name.number}</p>*/}
             <input value={name.number} onChange={addPhoneNumber} placeholder='Phone Number...' required/>
-
-            <div className="about-self">
             <p>About you: {about}</p>
             <textarea onChange={enterAbout} placeholder='Tell us about you'></textarea>
+        </>
+        )}
 
-        </div>
         </div>
 
         
 
-        <div className="educational-experience">
+       {/*} <div className="educational-experience">
             <h1>Education {<img src={arrowDown}></img>}</h1>
-            {/*<p>School Name: {school.name}</p>*/}
             <input type="text" value={school.name} onChange={addSchoolName} placeholder='School Name'/>
-            {/*<p>Field of study: {school.study}</p>*/}
             <input type="text" value={school.study} onChange={addFieldOfStudy} placeholder='Field of study...e.g Engineering'/>
-            {/*<p>School Location: {school.location}</p>*/}
             <input type="text" value={school.location} onChange={addSchoolLocation} placeholder='School Location'/>
-            {/*<p>Qualification: {school.qualification}</p>*/}
             <input type="text" value={school.qualification} onChange={addQualification} placeholder='Qualification...e.g. Diploma' />
-            {/*<p>Graduation Year: {school.graduation}</p>*/}
             <input type="text" value={school.graduation} onChange={addGraduationYear} placeholder='Graduation Year'/>
             <button>Add</button>
             <button>Submit</button>
-        </div>
+
+            
+        </div>*/}
+
+         <div className="educational-experience">
+      {/* Clicking the H1 toggles visibility */}
+      <h1 onClick={() => setShowInputs(!showInputs)} style={{ cursor: "pointer" }}>
+        Education <img src={arrowDown} alt="Toggle" />
+      </h1>
+
+      {/* Conditionally render inputs */}
+      {showInputs && (
+        <>
+          <input type="text" value={school.name} onChange={addSchoolName} placeholder="School Name" />
+          <input type="text" value={school.study} onChange={addFieldOfStudy} placeholder="Field of study...e.g Engineering" />
+          <input type="text" value={school.location} onChange={addSchoolLocation} placeholder="School Location" />
+          <input type="text" value={school.qualification} onChange={addQualification} placeholder="Qualification...e.g. Diploma" />
+          <input type="text" value={school.graduation} onChange={addGraduationYear} placeholder="Graduation Year" />
+          <button>Add</button>
+          <button>Submit</button>
+        </>
+      )}
+    </div>
 
         <div className="practical-experience">
-            <h1>Experience {<img src={arrowDown}></img>}</h1>
-            {/*<p>Job Title: {job.job}</p>*/}
+            <h1 onClick={() => setShowOutputs(!showOutputs)} style={{ cursor: "pointer" }}>
+                Experience {<img src={arrowDown}></img>}</h1>
+            {showOutputs && (
+                <>
             <input type="text" value={job.job} onChange={addJob} placeholder='Job Title'/>
-            {/*<p>Employer: {job.employer}</p>*/}
             <input type="text"  value={job.employer} onChange={addEmployer} placeholder='Employer'/>
-            {/*<p>Start Date: {job.startDate}</p>*/}
             <input type="text" value={job.startDate} onChange={addStartDate} placeholder='Start Date'/>
-            {/*<p>End Date: {job.endDate}</p>*/}
             <input type="text" value={job.endDate} onChange={addEndDate} placeholder='End Date' />
-            {/*<p>City: {job.city}</p>*/}
             <input type="text" value={job.city} onChange={addCity} placeholder='City' />
-            {/*<p>Country: {job.country}</p>*/}
             <input type="text" value={job.country} onChange={addCountry} placeholder='Country'/>
             <button>Add</button>
             <button>Submit</button>
+            </>
+            )}
         </div>
 
         <div className="skills">
-            <h1>⭐Skills {<img src={arrowDown}></img>}</h1>
-            
+            <h1 onClick={() => setSkillOutputs(!skillOutputs)} style={{ cursor: "pointer" }}>
+                ⭐Skills {<img src={arrowDown}></img>}</h1>
+            {skillOutputs && (
+                <>
             
                 <ul>
                 {skills.map((skill, index) => 
@@ -180,17 +201,24 @@ function Cv(){
             {isSkillInputVisisble && (
                 <div className='add-skill-input'><input type="text" id='newSkill' />
             <button onClick={addSkill}>+</button>
+           
+
+            
             </div>
             )}
 
             <button>Add</button>
             <button>Submit</button>
+           
+        
 
             </div>
             
             
 
             <button onClick={toggleSkillInput}>+ Add Skill</button>
+            </>
+            )}
         </div>
         </div>
 
@@ -220,6 +248,8 @@ function Cv(){
             <p>{school.qualification}</p>
             <p>{school.graduation}</p>
             <hr/>
+
+
 
             <h2>Experience</h2>
             <p>{job.job}</p>
