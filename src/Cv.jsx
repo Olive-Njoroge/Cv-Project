@@ -250,14 +250,31 @@ function Cv(){
             <hr/>
 
 
+            <div className="experinceCV">
+                <div>
+                    <h2>Experience</h2>
+                </div>
+                
+                <div className='job'>
+                    <div className="job-top">
+                     <p><i>Job Title:</i> {job.job}</p>
+                     <p><i>Employer:</i> {job.employer}</p>
+                     <p><i>Start Date:</i> {job.startDate}</p>
+                    </div>
+                    <div className="job-bottom">
+                     <p><i>End Date:</i> {job.endDate}</p>
+                     <p><i>City:</i> {job.city}</p>
+                     <p><i>Country:</i> {job.country}</p>
+                    </div>
+                     
+                     
+                </div>
+            
+            </div>
 
-            <h2>Experience</h2>
-            <p>{job.job}</p>
-            <p>{job.employer}</p>
-            <p>{job.startDate}</p>
-            <p>{job.endDate}</p>
-            <p>{job.city}</p>
-            <p>{job.country}</p>
+
+
+            
             <hr/>
 
             <h2>Skills</h2>
