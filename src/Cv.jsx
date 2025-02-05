@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import arrowDown from './assets/Arrow Down Double Icon _ Stroke _ Standard _  Download on Hugeicons Pro.jpeg'
+import arrowUp from './assets/Arrow Up Double Icon _ Stroke _ Standard _  Download on Hugeicons Pro.jpeg'
 function Cv(){
     const [name, setName] = useState({fName:"", lName: "", email: "", number: ""});
     const [school, setSchool] = useState({name: "", study: "", loaction: "", qualification: "", graduation: ""});
@@ -119,8 +120,10 @@ function Cv(){
 
 
             <div className="general-information">
-            <h1 onClick={() => setDisplayInputs(!displayInputs)} style={{ cursor: "pointer" }}>
-                General Information {<img src={arrowDown}></img>}</h1>
+            <h1 onClick={() => {
+                setDisplayInputs(!displayInputs);}}
+                style={{ cursor: "pointer" }}>
+                General Information {displayInputs ? <img src={arrowUp}/> : <img src={arrowDown}/>}</h1>
             {displayInputs && (
         <>
             
@@ -137,23 +140,14 @@ function Cv(){
 
         
 
-       {/*} <div className="educational-experience">
-            <h1>Education {<img src={arrowDown}></img>}</h1>
-            <input type="text" value={school.name} onChange={addSchoolName} placeholder='School Name'/>
-            <input type="text" value={school.study} onChange={addFieldOfStudy} placeholder='Field of study...e.g Engineering'/>
-            <input type="text" value={school.location} onChange={addSchoolLocation} placeholder='School Location'/>
-            <input type="text" value={school.qualification} onChange={addQualification} placeholder='Qualification...e.g. Diploma' />
-            <input type="text" value={school.graduation} onChange={addGraduationYear} placeholder='Graduation Year'/>
-            <button>Add</button>
-            <button>Submit</button>
-
-            
-        </div>*/}
+       
 
          <div className="educational-experience">
       {/* Clicking the H1 toggles visibility */}
-      <h1 onClick={() => setShowInputs(!showInputs)} style={{ cursor: "pointer" }}>
-        Education <img src={arrowDown} alt="Toggle" />
+      <h1 onClick={() => 
+        setShowInputs(!showInputs)}
+         style={{ cursor: "pointer" }}>
+        Education {showInputs ? <img src={arrowUp} /> : <img src={arrowDown}/>}
       </h1>
 
       {/* Conditionally render inputs */}
@@ -164,15 +158,17 @@ function Cv(){
           <input type="text" value={school.location} onChange={addSchoolLocation} placeholder="School Location" />
           <input type="text" value={school.qualification} onChange={addQualification} placeholder="Qualification...e.g. Diploma" />
           <input type="text" value={school.graduation} onChange={addGraduationYear} placeholder="Graduation Year" />
-          <button>Add</button>
-          <button>Submit</button>
+          {/*<button>Add</button>
+          <button>Submit</button>*/}
         </>
       )}
     </div>
 
         <div className="practical-experience">
-            <h1 onClick={() => setShowOutputs(!showOutputs)} style={{ cursor: "pointer" }}>
-                Experience {<img src={arrowDown}></img>}</h1>
+            <h1 onClick={() => 
+                setShowOutputs(!showOutputs)} 
+                style={{ cursor: "pointer" }}>
+                Experience {showOutputs ? <img src={arrowUp}/> : <img src={arrowDown}/>}</h1>
             {showOutputs && (
                 <>
             <input type="text" value={job.job} onChange={addJob} placeholder='Job Title'/>
@@ -181,15 +177,17 @@ function Cv(){
             <input type="text" value={job.endDate} onChange={addEndDate} placeholder='End Date' />
             <input type="text" value={job.city} onChange={addCity} placeholder='City' />
             <input type="text" value={job.country} onChange={addCountry} placeholder='Country'/>
-            <button>Add</button>
-            <button>Submit</button>
+            {/*<button>Add</button>
+            <button>Submit</button>*/}
             </>
             )}
         </div>
 
         <div className="skills">
-            <h1 onClick={() => setSkillOutputs(!skillOutputs)} style={{ cursor: "pointer" }}>
-                ⭐Skills {<img src={arrowDown}></img>}</h1>
+            <h1 onClick={() => 
+                setSkillOutputs(!skillOutputs)} 
+                style={{ cursor: "pointer" }}>
+                ⭐Skills {skillOutputs ? <img src={arrowUp}/> : <img src={arrowDown}/>}</h1>
             {skillOutputs && (
                 <>
             
@@ -207,8 +205,8 @@ function Cv(){
             </div>
             )}
 
-            <button>Add</button>
-            <button>Submit</button>
+            {/*<button>Add</button>
+            <button>Submit</button>*/}
            
         
 
