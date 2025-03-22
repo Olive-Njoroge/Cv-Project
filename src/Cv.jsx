@@ -5,8 +5,9 @@ function Cv(){
     const [name, setName] = useState({fName:"", lName: "", email: "", number: ""});
     const [school, setSchool] = useState({name: "", study: "", loaction: "", qualification: "", start: "", graduation: ""});
     const [job, setJob] = useState({job: "", employer: "", startDate: "", endDate: "", city: "", country: ""});
-    const [skills, setSkills] = useState(["writing", "dxx"]);
-    const [isSkillInputVisisble, setIsSkillInputVisible] = useState(false);//toggles visibility
+    // Modified to store skills as simple strings
+    const [skills, setSkills] = useState([]);
+    const [isSkillInputVisisble, setIsSkillInputVisible] = useState(false);
     const [photo, setPhoto] = useState(null);
     const [about, setAbout] = useState("");
     const [showInputs, setShowInputs] = useState(false);
@@ -87,13 +88,15 @@ function Cv(){
         setJob(j => ({...j, country: e.target.value}))
     }
 
-
-
+    // Simplified to add skill without rating
     const addSkill = () => {
-        const newSkill = document.getElementById("newSkill").value;
-        document.getElementById("newSkill").value = "";
-        setSkills(s => [...s, newSkill]);
-        setIsSkillInputVisible(false);//Hide input after adding skill
+        const newSkillName = document.getElementById("newSkill").value;
+        
+        if (newSkillName.trim() !== "") {
+            document.getElementById("newSkill").value = "";
+            setSkills(s => [...s, newSkillName]);
+            setIsSkillInputVisible(false);
+        }
     }
 
     const removeSkill = (index) => {
@@ -101,13 +104,12 @@ function Cv(){
     }
 
     const toggleSkillInput = () => {
-        setIsSkillInputVisible(true);//toggle input visibility
+        setIsSkillInputVisible(true);
     }
 
     const enterAbout = (e) => {
         setAbout(e.target.value);
     }
-
 
     return(
         <>
@@ -145,10 +147,6 @@ function Cv(){
 
         </div>
 
-        
-
-       
-
          <div className="educational-experience">
       {/* Clicking the H1 toggles visibility */}
       <h1 onClick={() => 
@@ -166,8 +164,6 @@ function Cv(){
           <input type="text" value={school.qualification} onChange={addQualification} placeholder="Qualification...e.g. Diploma" />
           <input type="text" value={school.start} onChange={addStartYear} placeholder="Which year did you join the institution..." />
           <input type="text" value={school.graduation} onChange={addGraduationYear} placeholder="Graduation Year" />
-          {/*<button>Add</button>
-          <button>Submit</button>*/}
         </>
       )}
     </div>
@@ -185,8 +181,6 @@ function Cv(){
             <input type="text" value={job.endDate} onChange={addEndDate} placeholder='End Date' />
             <input type="text" value={job.city} onChange={addCity} placeholder='City' />
             <input type="text" value={job.country} onChange={addCountry} placeholder='Country'/>
-            {/*<button>Add</button>
-            <button>Submit</button>*/}
             </>
             )}
         </div>
@@ -199,29 +193,27 @@ function Cv(){
             {skillOutputs && (
                 <>
             
-                <ul>
-                {skills.map((skill, index) => 
-                <li key={index} onClick={() => removeSkill(index)}>{skill}</li>)}
+                <ul className="skill-list">
+                {skills.map((skill, index) => (
+                    <li 
+                        key={index} 
+                        className="skill-item" 
+                        onClick={() => removeSkill(index)}
+                        style={{ cursor: "pointer" }}
+                    >
+                        <span>{skill}</span> <span style={{ color: "red", fontSize: "0.8em" }}>(click to remove)</span>
+                    </li>
+                ))}
                 </ul>
             <div className='skillAddDiv'>
             {isSkillInputVisisble && (
-                <div className='add-skill-input'><input type="text" id='newSkill' />
-            <button onClick={addSkill}>+</button>
-           
-
-            
-            </div>
+                <div className='add-skill-input'>
+                    <input type="text" id='newSkill' placeholder="Enter skill" />
+                    <button onClick={addSkill}>+</button>
+                </div>
             )}
-
-            {/*<button>Add</button>
-            <button>Submit</button>*/}
-           
-        
-
             </div>
             
-            
-
             <button onClick={toggleSkillInput}>+ Add Skill</button>
             </>
             )}
@@ -235,8 +227,8 @@ function Cv(){
                 </div>
             <div className="details">
                 <h1>{name.fName} {name.lName}</h1>
-            <p>✉{name.email}</p>
-            <p>📞{name.number}</p>
+                <p>✉{name.email}</p>
+                <p>📞{name.number}</p>
             </div>
             </div>
 
@@ -279,34 +271,26 @@ function Cv(){
                      <p><i>City:</i> {job.city}</p>
                      <p><i>Country:</i> {job.country}</p>
                     </div>
-                     
-                     
                 </div>
-            
             </div>
 
-
-
-            
             <hr/>
 
             <h2>Skills</h2>
-            <ul>
-                <li>{skills}</li>
-            </ul>
+            {skills.length > 0 ? (
+                <ul className="sorted-skills">
+                    {skills.map((skill, index) => (
+                        <li key={index}>
+                            {skill}
+                        </li>
+                    ))}
+                </ul>
+            ) : (
+                <p></p>
+            )}
             
         </div>
         </div>
-        
-
-
-       
-        
-
-       
-        
-
-
 </>
 )
 }
