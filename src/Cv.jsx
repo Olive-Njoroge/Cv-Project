@@ -3,7 +3,7 @@ import arrowDown from './assets/Arrow Down Double Icon _ Stroke _ Standard _  Do
 import arrowUp from './assets/Arrow Up Double Icon _ Stroke _ Standard _  Download on Hugeicons Pro.jpeg'
 function Cv(){
     const [name, setName] = useState({fName:"", lName: "", email: "", number: ""});
-    const [school, setSchool] = useState({name: "", study: "", loaction: "", qualification: "", graduation: ""});
+    const [school, setSchool] = useState({name: "", study: "", loaction: "", qualification: "", start: "", graduation: ""});
     const [job, setJob] = useState({job: "", employer: "", startDate: "", endDate: "", city: "", country: ""});
     const [skills, setSkills] = useState(["writing", "dxx"]);
     const [isSkillInputVisisble, setIsSkillInputVisible] = useState(false);//toggles visibility
@@ -13,6 +13,7 @@ function Cv(){
     const [showOutputs, setShowOutputs] = useState(false);
     const [displayInputs, setDisplayInputs] = useState(false);
     const [skillOutputs, setSkillOutputs] = useState(false);
+
 
     const handlePhotoChange = (e) => {
         const file = e.target.files[0];  // Get the selected file
@@ -54,6 +55,10 @@ function Cv(){
         setSchool(s => ({...s, qualification: e.target.value}))
     }
 
+    const addStartYear = (e) => {
+        setSchool(s => ({...s, start: e.target.value}))
+    }
+
     const addGraduationYear = (e) => {
         setSchool(s => ({...s, graduation: e.target.value}))
     }
@@ -81,6 +86,8 @@ function Cv(){
     const addCountry = (e) => {
         setJob(j => ({...j, country: e.target.value}))
     }
+
+
 
     const addSkill = () => {
         const newSkill = document.getElementById("newSkill").value;
@@ -157,6 +164,7 @@ function Cv(){
           <input type="text" value={school.study} onChange={addFieldOfStudy} placeholder="Field of study...e.g Engineering" />
           <input type="text" value={school.location} onChange={addSchoolLocation} placeholder="School Location" />
           <input type="text" value={school.qualification} onChange={addQualification} placeholder="Qualification...e.g. Diploma" />
+          <input type="text" value={school.start} onChange={addStartYear} placeholder="Which year did you join the institution..." />
           <input type="text" value={school.graduation} onChange={addGraduationYear} placeholder="Graduation Year" />
           {/*<button>Add</button>
           <button>Submit</button>*/}
@@ -240,11 +248,18 @@ function Cv(){
              
 
             <h2>Education</h2>
-            <p>{school.name}</p>
-            <p>{school.study}</p>
-            <p>{school.location}</p>
-            <p>{school.qualification}</p>
-            <p>{school.graduation}</p>
+            <div className="education1">
+                <p>{school.name}</p>
+                <p>{school.study}</p>
+                <p>{school.location}</p>
+            </div>
+            <div className="education2">
+                <p>{school.qualification}</p>
+                <p>{school.start}</p>
+                <p>{school.graduation}</p>
+            </div>
+            
+            
             <hr/>
 
 

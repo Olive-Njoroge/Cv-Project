@@ -169,4 +169,18 @@ img{
     margin-right: 150px;
 }
 
+.education1{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 120px;
+    max-width: 500px;
+}
+
+.education2{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 120px;
+    max-width: 500px;
+}
+
 
